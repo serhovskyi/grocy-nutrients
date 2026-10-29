@@ -1,5 +1,5 @@
 # ---------- Stage 1: build ----------
-FROM node:24-alpine@sha256:21f403ab171f2dc89bad4dd69d7721bfd15f084ccb46cdd225f31f2bc59b5c9a AS build
+FROM node:24-alpine@sha256:8a32c8cf649a49915a66e81e7a609223c708d0adabf288ee3f4077d765542f85 AS build
 
 RUN apk upgrade --no-cache
 
@@ -12,7 +12,7 @@ COPY frontend/ .
 RUN npm run build
 
 # ---------- Stage 2: production ----------
-FROM nginx:stable-alpine@sha256:5f979dcfed4ce6461873f087e8c980d6e29b084b9e8776d9704a7e989b5f4898 AS production
+FROM nginx:stable-alpine@sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949 AS production
 
 RUN apk update && apk upgrade --no-cache
 
